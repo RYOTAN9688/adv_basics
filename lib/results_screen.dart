@@ -9,7 +9,7 @@ class ResultsScreen extends StatelessWidget {
 
   final List<String> chosenAnswers;
 
-  List<Map<String, Object>> getSummaryAnswers() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
     for (int i = 0; i < chosenAnswers.length; i++) {
       summary.add({
@@ -24,11 +24,12 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryAnswers();
     final numTotalQuestions = questions.length;
-    final numCurrentQuestions = summaryData.where((data) {
-      return data['user_answer'] == data['currect_answer'];
-    }).length;
+    final numCurrentQuestions = summaryData
+        .where(
+          (data) => data['user_answer'] == data['currect_answer'],
+        )
+        .length;
 
     return SizedBox(
       width: double.infinity,

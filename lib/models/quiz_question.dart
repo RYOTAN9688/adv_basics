@@ -4,7 +4,7 @@ class QuizQuestion {
   final String text;
   final List<String> answers;
 
-  List<String> getSheffledAnswer() {
+  List<String> get sheffledAnswer {
     //Questionのリストをコピーする
     final sheffedList = List.of(answers);
     sheffedList.shuffle();

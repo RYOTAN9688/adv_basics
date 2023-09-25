@@ -45,7 +45,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
             const SizedBox(height: 30),
             //listをmap使用して回答ボタンのリストへと変換する
-            ...currentQuestion.getSheffledAnswer().map((answer) {
+            ...currentQuestion.sheffledAnswer.map((answer) {
               return AnswerButton(
                 answer: answer,
                 onTap: () {
